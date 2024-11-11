@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: #373D5D;
+    --color-secondary: #E63946;
+    --color-accent: #8B8FA3;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply antialiased;
+  }
+}
+
+@layer components {
+  input, textarea {
+    @apply border-gray-300 focus:ring-primary focus:border-primary;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+
+  .gradient-bg {
+    @apply bg-gradient-to-r from-primary to-secondary;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-right {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-left {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s ease-out forwards;
+}
+
+.animate-slide-right {
+  animation: slide-right 0.6s ease-out forwards;
+}
+
+.animate-slide-left {
+  animation: slide-left 0.6s ease-out forwards;
+}
+
+.bg-grid-slate-900\/\[0\.04\] {
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black, black, transparent);
+  mask-image: linear-gradient(to bottom, transparent, black, black, transparent);
+  background-image: linear-gradient(to right, rgb(55 61 93 / 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(55 61 93 / 0.04) 1px, transparent 1px);
+}
